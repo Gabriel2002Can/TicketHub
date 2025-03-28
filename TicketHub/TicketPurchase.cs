@@ -34,7 +34,7 @@ namespace TicketHub
         public string Expiration { get; set; }
 
         [Required]
-        [StringLength(4,MinimumLength =3, ErrorMessage ="Your security code must be between 3 and 4 digits long.")]
+        [RegularExpression(@"^\d{3,4}$", ErrorMessage = "Your security code must be between 3 and 4 digits long and it can only contain numbers.")]
         public string SecurityCode { get; set; }
 
         [Required]
